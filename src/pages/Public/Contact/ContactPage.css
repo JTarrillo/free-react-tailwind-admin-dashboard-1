@@ -1,0 +1,85 @@
+.contact-section-container {
+  /* Corresponds to: py-16 bg-gray-100 dark:bg-gray-800 */
+  padding-top: 4rem; /* py-16 */
+  padding-bottom: 4rem; /* py-16 */
+  background-color: #f3f4f6; /* bg-gray-100 */
+}
+
+.dark .contact-section-container {
+  background-color: #1f2937; /* dark:bg-gray-800 */
+}
+
+.contact-header-title {
+  /* Corresponds to: text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4 */
+  font-size: 1.875rem; /* text-3xl */
+  line-height: 2.25rem;
+  font-weight: 700; /* font-bold */
+  color: #1f2937; /* text-gray-800 */
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+@media (min-width: 640px) {
+  .contact-header-title {
+    font-size: 2.25rem; /* sm:text-4xl */
+    line-height: 2.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .contact-header-title {
+    font-size: 3rem; /* md:text-5xl */
+    line-height: 1;
+  }
+}
+
+.dark .contact-header-title {
+  color: #ffffff; /* dark:text-white */
+}
+
+.contact-form-card {
+  /* Corresponds to: bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-xl shadow-xl */
+  background-color: #ffffff; /* bg-white */
+  padding: 1.5rem; /* p-6 */
+  border-radius: 0.75rem; /* rounded-xl */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* shadow-xl */
+}
+
+@media (min-width: 640px) {
+  .contact-form-card {
+    padding: 2rem; /* sm:p-8 */
+  }
+}
+
+.dark .contact-form-card {
+  background-color: #1f2937; /* dark:bg-gray-800 */
+}
+
+.contact-info-card {
+  /* Corresponds to: bg-gray-50 dark:bg-gray-800/50 p-6 sm:p-8 rounded-xl */
+  background-color: #f9fafb; /* bg-gray-50 */
+  padding: 1.5rem; /* p-6 */
+  border-radius: 0.75rem; /* rounded-xl */
+}
+
+@media (min-width: 640px) {
+  .contact-info-card {
+    padding: 2rem; /* sm:p-8 */
+  }
+}
+
+.dark .contact-info-card {
+  background-color: rgba(31, 41, 55, 0.5); /* dark:bg-gray-800/50 */
+}
+
+.contact-subsection-title {
+  /* Corresponds to: text-2xl font-semibold text-gray-900 dark:text-white mb-6 */
+  font-size: 1.5rem; /* text-2xl */
+  line-height: 2rem;
+  font-weight: 600; /* font-semibold */
+  color: #111827; /* text-gray-900 */
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+.dark .contact-subsection-title {
+  color: #ffffff; /* dark:text-white */
+}

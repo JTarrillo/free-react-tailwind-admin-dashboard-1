@@ -1,0 +1,85 @@
+.services-section-container {
+  /* Corresponds to: py-16 bg-white dark:bg-gray-800/30 */
+  padding-top: 4rem; /* py-16 */
+  padding-bottom: 4rem; /* py-16 */
+  background-color: #ffffff; /* bg-white */
+}
+
+.dark .services-section-container {
+  background-color: rgba(31, 41, 55, 0.3); /* dark:bg-gray-800/30 */
+}
+
+.services-header-title {
+  /* Corresponds to: text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4 */
+  font-size: 1.875rem; /* text-3xl */
+  line-height: 2.25rem;
+  font-weight: 700; /* font-bold */
+  color: #1f2937; /* text-gray-800 */
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+/* Example for small screens (sm) */
+@media (min-width: 640px) {
+  .services-header-title {
+    font-size: 2.25rem; /* sm:text-4xl */
+    line-height: 2.5rem;
+  }
+}
+
+/* Example for medium screens (md) */
+@media (min-width: 768px) {
+  .services-header-title {
+    font-size: 3rem; /* md:text-5xl */
+    line-height: 1;
+  }
+}
+
+.dark .services-header-title {
+  color: #ffffff; /* dark:text-white */
+}
+
+.service-card {
+  /* Corresponds to: bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col */
+  background-color: #ffffff; /* bg-white */
+  padding: 1.5rem; /* p-6 */
+  border-radius: 0.75rem; /* rounded-xl */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+  transition-property: box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  /* display: flex; flex-direction: column; will be kept with Tailwind */
+}
+
+.service-card:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* hover:shadow-2xl */
+}
+
+@media (min-width: 640px) {
+  .service-card {
+    padding: 2rem; /* sm:p-8 */
+  }
+}
+
+.dark .service-card {
+  background-color: #1f2937; /* dark:bg-gray-800 */
+}
+
+.service-card-title {
+  /* Corresponds to: text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-3 */
+  font-size: 1.25rem; /* text-xl */
+  line-height: 1.75rem;
+  font-weight: 600; /* font-semibold */
+  color: #111827; /* text-gray-900 */
+  margin-bottom: 0.75rem; /* mb-3 */
+}
+
+@media (min-width: 640px) {
+  .service-card-title {
+    font-size: 1.5rem; /* sm:text-2xl */
+    line-height: 2rem;
+  }
+}
+
+.dark .service-card-title {
+  color: #ffffff; /* dark:text-white */
+}

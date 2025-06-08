@@ -1,8 +1,10 @@
-import PageMeta from "../../components/common/PageMeta";
-// import { Link } from "react-router-dom"; // No se usa Link de react-router-dom directamente aquí para scroll
-import AboutSection from "./AboutPage"; // Revertido a la ruta local
-import ServicesSection from "./ServicesPage"; // Revertido a la ruta local
-import ContactSection from "./ContactPage"; // Revertido a la ruta local
+import PageMeta from "../../../components/common/PageMeta";
+// import { Link } from "react-router-dom"; 
+import AboutSection from "../About/AboutPage"; 
+import ServicesSection from "../Services/ServicesPage"; 
+import ContactSection from "../Contact/ContactPage"; 
+import TestimonialsSection from "../Testimons/TestimonialsPage"; // Ruta corregida
+import "./HomePage.css"; // Importar el archivo CSS (asumiendo que está en la misma carpeta 'Home')
 
 export default function HomePage() {
   const handleScrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -18,15 +20,15 @@ export default function HomePage() {
       />
 
       {/* Hero Section - Ailife Style */}
-      <section id="home" className="relative py-20 md:py-28 lg:py-32 xl:py-40 bg-gradient-to-br from-blue-50 via-pink-50 to-indigo-100 dark:from-gray-800 dark:via-gray-800 dark:to-slate-900 overflow-hidden">
+      <section id="home" className="relative py-20 md:py-28 lg:py-32 xl:py-40 hero-section overflow-hidden"> {/* Clases de Tailwind reemplazadas */}
         {/* Decorative elements (simplified) */}
-        <div className="absolute top-0 left-0 w-64 h-64 bg-pink-200/30 dark:bg-pink-500/20 rounded-full filter blur-3xl opacity-50 -translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute bottom-0 right-0 w-72 h-72 bg-blue-200/30 dark:bg-blue-500/20 rounded-full filter blur-3xl opacity-50 translate-x-1/2 translate-y-1/2"></div>
+        <div className="absolute top-0 left-0 w-64 h-64 hero-decorative-pink"></div> {/* Clases reemplazadas */}
+        <div className="absolute bottom-0 right-0 w-72 h-72 hero-decorative-blue"></div> {/* Clases reemplazadas */}
 
         <div className="container mx-auto px-6 text-center relative z-10">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-800 dark:text-white">
             Get Quality & 10x Faster Way To <br className="hidden md:block" /> Write{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600 dark:from-blue-400 dark:to-purple-500">
+            <span className="hero-title-gradient"> {/* Clases reemplazadas */}
               Testimonials
             </span>
           </h1>
@@ -42,6 +44,8 @@ export default function HomePage() {
                 document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
               }}
               className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold px-10 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-lg"
+              // Nota: Este gradiente del botón es un buen candidato para permanecer como clases de Tailwind
+              // ya que es interactivo (hover:) y conciso. Extraerlo a CSS sería más complejo.
             >
               Get Started
             </a>
@@ -50,7 +54,7 @@ export default function HomePage() {
       </section>
 
       {/* Features Section (Why Choose Us) */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-900">
+      <section className="py-16 bg-gray-50 dark:bg-gray-900"> {/* Estos estilos de Tailwind se mantienen por simplicidad */}
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 dark:text-white">
@@ -141,12 +145,13 @@ export default function HomePage() {
         </div>
       </section>
 
+      <TestimonialsSection /> 
       <ServicesSection />
       <AboutSection />
       <ContactSection />
 
       {/* Final Call to Action Section (Optional, can be removed if redundant) */}
-      <section className="py-16 bg-gradient-to-r from-brand-600 to-brand-800 text-white dark:from-brand-700 dark:to-brand-900">
+      <section className="py-16 final-cta-section"> {/* Clases de Tailwind reemplazadas */}
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-6">
             ¿Listo para Empezar Tu Próximo Gran Proyecto?

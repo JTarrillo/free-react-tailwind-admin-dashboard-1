@@ -1,5 +1,6 @@
 // import PageMeta from "../../components/common/PageMeta"; // Eliminado
 import { Link } from "react-router-dom"; // Import Link for CTAs
+import "./ServicesPage.css"; // Importar el archivo CSS
 
 // Placeholder icon component (replace with actual icons if available)
 const ServiceIcon = ({ className }: { className?: string }) => (
@@ -72,10 +73,10 @@ export default function ServicesSection() {
     //   title="Nuestros Servicios - Soluciones Innovadoras"
     //   description="Explora la gama de servicios que ofrecemos para potenciar tu proyecto digital."
     // />
-    <section id="services" className="py-16 bg-white dark:bg-gray-800/30"> {/* Añadido id="services" y cambiado div wrapper a section */}
+    <section id="services" className="services-section-container"> {/* Aplicando clase CSS */}
       <div className="container mx-auto px-4"> {/* Eliminado py-12 md:py-20 */}
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4"> {/* Cambiado h1 a h2 */}
+          <h2 className="services-header-title"> {/* Aplicando clase CSS */}
             Servicios Diseñados Para Tu Éxito
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
@@ -88,12 +89,12 @@ export default function ServicesSection() {
           {services.map((service) => (
             <div
               key={service.id}
-              className="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col"
+              className="service-card flex flex-col" // Aplicando clase CSS y manteniendo Tailwind para flex
             >
               <div className="mb-4 flex justify-center sm:justify-start">
                 {service.icon}
               </div>
-              <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-3"> {/* Cambiado h2 a h3 */}
+              <h3 className="service-card-title"> {/* Aplicando clase CSS */}
                 {service.title}
               </h3>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed flex-grow">
@@ -118,7 +119,7 @@ export default function ServicesSection() {
           <a // Cambiado de Link a <a> para scroll suave
             href="#contact"
             onClick={handleScrollToContact}
-            className="bg-brand-500 hover:bg-brand-600 text-white font-semibold px-8 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 dark:bg-brand-600 dark:hover:bg-brand-700"
+            className="bg-brand-500 hover:bg-brand-600 text-white font-semibold px-8 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 dark:bg-brand-600 dark:hover:bg-brand-700" // Tailwind para el botón
           >
             Contáctanos para una Consulta
           </a>

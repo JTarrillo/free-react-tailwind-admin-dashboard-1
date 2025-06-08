@@ -1,0 +1,83 @@
+.about-section-container {
+  /* Corresponds to: py-16 bg-gray-50 dark:bg-gray-900 */
+  padding-top: 4rem; /* py-16 */
+  padding-bottom: 4rem; /* py-16 */
+  background-color: #f9fafb; /* bg-gray-50 */
+}
+
+.dark .about-section-container {
+  background-color: #111827; /* dark:bg-gray-900 */
+}
+
+.about-header-title {
+  /* Corresponds to: text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4 */
+  font-size: 1.875rem; /* text-3xl */
+  line-height: 2.25rem;
+  font-weight: 700; /* font-bold */
+  color: #1f2937; /* text-gray-800 */
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+/* Example for small screens (sm) */
+@media (min-width: 640px) {
+  .about-header-title {
+    font-size: 2.25rem; /* sm:text-4xl */
+    line-height: 2.5rem;
+  }
+}
+
+/* Example for medium screens (md) */
+@media (min-width: 768px) {
+  .about-header-title {
+    font-size: 3rem; /* md:text-5xl */
+    line-height: 1;
+  }
+}
+
+.dark .about-header-title {
+  color: #ffffff; /* dark:text-white */
+}
+
+.about-content-card {
+  /* Corresponds to: bg-white dark:bg-gray-800 p-6 sm:p-8 md:p-10 rounded-xl shadow-xl */
+  background-color: #ffffff; /* bg-white */
+  padding: 1.5rem; /* p-6 */
+  border-radius: 0.75rem; /* rounded-xl */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* shadow-xl */
+}
+
+@media (min-width: 640px) {
+  .about-content-card {
+    padding: 2rem; /* sm:p-8 */
+  }
+}
+@media (min-width: 768px) {
+  .about-content-card {
+    padding: 2.5rem; /* md:p-10 */
+  }
+}
+
+.dark .about-content-card {
+  background-color: #1f2937; /* dark:bg-gray-800 */
+}
+
+.about-subsection-title {
+  /* Corresponds to: text-2xl md:text-3xl font-semibold text-gray-900 dark:text-white mb-6 flex items-center */
+  font-size: 1.5rem; /* text-2xl */
+  line-height: 2rem;
+  font-weight: 600; /* font-semibold */
+  color: #111827; /* text-gray-900 */
+  margin-bottom: 1.5rem; /* mb-6 */
+  /* display: flex; items-center; will be kept with Tailwind for simplicity with icons */
+}
+
+@media (min-width: 768px) {
+  .about-subsection-title {
+    font-size: 1.875rem; /* md:text-3xl */
+    line-height: 2.25rem;
+  }
+}
+
+.dark .about-subsection-title {
+  color: #ffffff; /* dark:text-white */
+}

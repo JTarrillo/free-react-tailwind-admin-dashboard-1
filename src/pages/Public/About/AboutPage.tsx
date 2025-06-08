@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "./AboutPage.css"; // Importar el archivo CSS
 
 // Placeholder icon components
 const MissionIcon = () => (
@@ -65,11 +66,11 @@ export default function AboutSection() {
   };
 
   return (
-    <section id="about" className="py-16 bg-gray-50 dark:bg-gray-900">
+    <section id="about" className="about-section-container"> {/* Aplicando clase CSS y manteniendo Tailwind si es necesario */}
       <div className="container mx-auto px-4">
         {/* Header Section */}
         <div className="text-center mb-12 md:mb-16">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4">
+          <h1 className="about-header-title"> {/* Aplicando clase CSS */}
             Conoce Nuestra Esencia
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
@@ -80,10 +81,10 @@ export default function AboutSection() {
         </div>
 
         {/* Main Content Area */}
-        <div className="bg-white dark:bg-gray-800 p-6 sm:p-8 md:p-10 rounded-xl shadow-xl">
+        <div className="about-content-card"> {/* Aplicando clase CSS */}
           <div className="mb-10">
-            <h3 className="text-2xl md:text-3xl font-semibold text-gray-900 dark:text-white mb-6 flex items-center">
-              <MissionIcon />{" "}
+            <h3 className="about-subsection-title flex items-center"> {/* Aplicando clase CSS y manteniendo Tailwind para flex */}
+              <MissionIcon />
               <span className="ml-3">Nuestra Misión</span>
             </h3>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
@@ -97,7 +98,7 @@ export default function AboutSection() {
           </div>
 
           <div className="mb-10">
-            <h3 className="text-2xl md:text-3xl font-semibold text-gray-900 dark:text-white mb-6 flex items-center">
+            <h3 className="about-subsection-title flex items-center"> {/* Aplicando clase CSS y manteniendo Tailwind para flex */}
               <VisionIcon /> <span className="ml-3">Nuestra Visión</span>
             </h3>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
@@ -110,7 +111,7 @@ export default function AboutSection() {
           </div>
 
           <div>
-            <h3 className="text-2xl md:text-3xl font-semibold text-gray-900 dark:text-white mb-6 flex items-center">
+            <h3 className="about-subsection-title flex items-center"> {/* Aplicando clase CSS y manteniendo Tailwind para flex */}
               <ValuesIcon /> <span className="ml-3">Nuestros Valores</span>
             </h3>
             <ul className="grid md:grid-cols-2 gap-6 text-lg">
@@ -126,7 +127,7 @@ export default function AboutSection() {
               ).map((value, index) => (
                 <li key={index} className="flex items-start">
                   <svg
-                    className="w-5 h-5 text-brand-500 mr-2 mt-1 flex-shrink-0"
+                    className="w-5 h-5 text-brand-500 mr-2 mt-1 flex-shrink-0" // Tailwind para el icono
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -136,7 +137,7 @@ export default function AboutSection() {
                       clipRule="evenodd"
                     ></path>
                   </svg>
-                  <span className="text-gray-700 dark:text-gray-300">
+                  <span className="text-gray-700 dark:text-gray-300"> {/* Tailwind para el texto del valor */}
                     {value}
                   </span>
                 </li>
@@ -157,7 +158,7 @@ export default function AboutSection() {
           <a
             href="#contact"
             onClick={handleScrollToContact}
-            className="bg-brand-500 hover:bg-brand-600 text-white font-semibold px-8 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 dark:bg-brand-600 dark:hover:bg-brand-700"
+            className="bg-brand-500 hover:bg-brand-600 text-white font-semibold px-8 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 dark:bg-brand-600 dark:hover:bg-brand-700" // Tailwind para el botón
           >
             Hablemos
           </a>

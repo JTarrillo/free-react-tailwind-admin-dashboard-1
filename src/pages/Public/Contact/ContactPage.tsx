@@ -1,4 +1,5 @@
 // import PageMeta from "../../components/common/PageMeta"; // Eliminado
+import "./ContactPage.css"; // Importar el archivo CSS
 
 // Placeholder icon components (replace with actual icons if available)
 const MailIcon = () => (
@@ -61,10 +62,10 @@ export default function ContactSection() {
     //   title="Contacto - Hablemos de Tu Proyecto"
     //   description="Ponte en contacto con nosotros. Estamos listos para ayudarte a alcanzar tus metas."
     // />
-    <section id="contact" className="py-16 bg-gray-100 dark:bg-gray-800"> {/* Añadido id="contact" y cambiado div wrapper a section */}
-      <div className="container mx-auto px-4"> {/* Eliminado py-12 md:py-20 */}
+    <section id="contact" className="contact-section-container"> {/* Aplicando clase CSS */}
+      <div className="container mx-auto px-4"> 
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4"> {/* Cambiado h1 a h2 */}
+          <h2 className="contact-header-title"> {/* Aplicando clase CSS */}
             Ponte en Contacto
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
@@ -76,8 +77,8 @@ export default function ContactSection() {
 
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Contact Form */}
-          <div className="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-xl shadow-xl">
-            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6"> {/* Cambiado h2 a h3 */}
+          <div className="contact-form-card"> {/* Aplicando clase CSS */}
+            <h3 className="contact-subsection-title"> {/* Aplicando clase CSS */}
               Envíanos un Mensaje
             </h3>
             <form>
@@ -151,8 +152,8 @@ export default function ContactSection() {
           </div>
 
           {/* Contact Information */}
-          <div className="bg-gray-50 dark:bg-gray-800/50 p-6 sm:p-8 rounded-xl">
-            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6"> {/* Cambiado h2 a h3 */}
+          <div className="contact-info-card"> {/* Aplicando clase CSS */}
+            <h3 className="contact-subsection-title"> {/* Aplicando clase CSS */}
               Información de Contacto
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-6">
@@ -184,7 +185,7 @@ export default function ContactSection() {
               </li>
             </ul>
             <div className="mt-8">
-              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3"> {/* Cambiado h3 a h4 */}
+              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3"> 
                 Horario de Atención
               </h4>
               <p className="text-gray-600 dark:text-gray-400">

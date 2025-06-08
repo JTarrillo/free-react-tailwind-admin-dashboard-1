@@ -63,6 +63,7 @@ export default function PublicHeader() {
     { to: "#home", label: "Inicio" }, // #home para la sección Hero
     { to: "#about", label: "Acerca de" }, 
     { to: "#services", label: "Servicios" }, 
+    { to: "#testimonials", label: "Testimonios" }, // Nuevo enlace añadido
     { to: "#contact", label: "Contacto" },   
   ];
 

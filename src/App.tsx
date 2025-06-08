@@ -27,10 +27,10 @@ import ContactosAdminPage from "./pages/Site/Contactos";
 
 // Importar Layout y páginas públicas
 import PublicLayout from "./layout/PublicLayout";
-import HomePage from "./pages/Public/HomePage";
-import AboutPage from "./pages/Public/AboutPage";
-import ServicesPage from "./pages/Public/ServicesPage";
-import ContactPage from "./pages/Public/ContactPage";
+import HomePage from "./pages/Public/Home/HomePage";
+import AboutPage from "./pages/Public/About/AboutPage";
+import ServicesPage from "./pages/Public/Services/ServicesPage";
+import ContactPage from "./pages/Public/Contact/ContactPage";
 
 // Importar SidebarProvider
 import { SidebarProvider } from "./context/SidebarContext";
