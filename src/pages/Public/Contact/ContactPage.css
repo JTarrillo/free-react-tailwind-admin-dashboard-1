@@ -6,7 +6,18 @@
 }
 
 .dark .contact-section-container {
-  background-color: #1f2937; /* dark:bg-gray-800 */
+  background-color: #111827; /* dark:bg-gray-900 (más oscuro que gray-800 para un look 2025) */
+}
+
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .contact-header-title {
@@ -16,6 +27,7 @@
   font-weight: 700; /* font-bold */
   color: #1f2937; /* text-gray-800 */
   margin-bottom: 1rem; /* mb-4 */
+  animation: fadeInSlideUp 0.8s ease-out forwards;
 }
 
 @media (min-width: 640px) {
@@ -36,39 +48,62 @@
   color: #ffffff; /* dark:text-white */
 }
 
-.contact-form-card {
-  /* Corresponds to: bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-xl shadow-xl */
-  background-color: #ffffff; /* bg-white */
-  padding: 1.5rem; /* p-6 */
-  border-radius: 0.75rem; /* rounded-xl */
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* shadow-xl */
+.contact-form-card,
+.contact-info-card {
+  border-radius: 0.875rem; /* rounded-xl un poco más grande */
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, border-color 0.3s ease-out;
+  border: 1px solid transparent; /* Para efecto hover de borde */
 }
 
-@media (min-width: 640px) {
-  .contact-form-card {
-    padding: 2rem; /* sm:p-8 */
-  }
+.contact-form-card {
+  /* Corresponds to: bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-xl shadow-xl */
+  background-color: #ffffff; 
+  padding: 1.5rem; 
+  /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05), 0 4px 8px rgba(0,0,0,0.04); Sombra más suave */
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.07); /* Sombra aún más sutil y moderna */
+
 }
 
 .dark .contact-form-card {
   background-color: #1f2937; /* dark:bg-gray-800 */
+  /* box-shadow: 0 8px 16px rgba(0,0,0,0.15), 0 4px 8px rgba(0,0,0,0.1); */
+  box-shadow: 0 4px 6px -1px rgba(255,255,255,0.03), 0 2px 4px -2px rgba(255,255,255,0.03);
+  border-color: rgba(55, 65, 81, 0.5); /* dark:border-gray-700 sutil */
 }
+
+.contact-form-card:hover,
+.contact-info-card:hover {
+  transform: translateY(-6px);
+  /* box-shadow: 0 12px 24px rgba(0,0,0,0.08), 0 6px 12px rgba(0,0,0,0.06); Sombra más pronunciada en hover */
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1); /* Tailwind shadow-lg */
+  /* border-color: #6366f1; /* brand-500 (ejemplo, tu color de marca) */
+}
+
+/* .dark .contact-form-card:hover,
+.dark .contact-info-card:hover {
+  border-color: #818cf8; /* brand-400 (ejemplo) */
+/* } */
+
 
 .contact-info-card {
   /* Corresponds to: bg-gray-50 dark:bg-gray-800/50 p-6 sm:p-8 rounded-xl */
-  background-color: #f9fafb; /* bg-gray-50 */
-  padding: 1.5rem; /* p-6 */
-  border-radius: 0.75rem; /* rounded-xl */
+  background-color: #f9fafb; 
+  padding: 1.5rem; 
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.07);
 }
 
 @media (min-width: 640px) {
+  .contact-form-card,
   .contact-info-card {
     padding: 2rem; /* sm:p-8 */
   }
 }
 
 .dark .contact-info-card {
-  background-color: rgba(31, 41, 55, 0.5); /* dark:bg-gray-800/50 */
+  background-color: #1a202c; /* Un gris oscuro ligeramente diferente para contraste */
+  /* background-color: rgba(31, 41, 55, 0.7); dark:bg-gray-800/70 */
+  box-shadow: 0 4px 6px -1px rgba(255,255,255,0.03), 0 2px 4px -2px rgba(255,255,255,0.03);
+  border-color: rgba(55, 65, 81, 0.5);
 }
 
 .contact-subsection-title {
@@ -78,8 +113,111 @@
   font-weight: 600; /* font-semibold */
   color: #111827; /* text-gray-900 */
   margin-bottom: 1.5rem; /* mb-6 */
+  letter-spacing: -0.02em; /* Ligero ajuste para modernidad */
 }
 
 .dark .contact-subsection-title {
   color: #ffffff; /* dark:text-white */
+}
+
+/* Modern Form Inputs */
+.contact-form-input {
+  /* Reemplaza clases de Tailwind para input/textarea si se aplica esta clase */
+  width: 100%;
+  padding: 0.875rem 1rem; /* p-3.5 o similar */
+  border: 1px solid #d1d5db; /* border-gray-300 */
+  border-radius: 0.5rem; /* rounded-lg */
+  background-color: #ffffff; /* bg-white */
+  color: #111827; /* text-gray-900 */
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  font-size: 0.95rem;
+}
+
+.dark .contact-form-input {
+  border-color: #4b5563; /* dark:border-gray-600 */
+  background-color: #374151; /* dark:bg-gray-700 */
+  color: #f3f4f6; /* dark:text-gray-100 */
+}
+
+.contact-form-input::placeholder {
+  color: #9ca3af; /* placeholder-gray-400 */
+}
+
+.dark .contact-form-input::placeholder {
+  color: #6b7280; /* dark:placeholder-gray-500 */
+}
+
+.contact-form-input:focus {
+  outline: none;
+  border-color: #4f46e5; /* brand-600 (ejemplo, tu color de marca) */
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2); /* Anillo de foco con color de marca y transparencia */
+}
+
+.dark .contact-form-input:focus {
+  border-color: #6366f1; /* brand-500 (ejemplo) */
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+}
+
+/* Modern Submit Button */
+.contact-form-submit {
+  /* Reemplaza clases de Tailwind para el botón si se aplica esta clase */
+  width: 100%;
+  background-color: #4f46e5; /* brand-600 (ejemplo) */
+  color: white;
+  font-weight: 600; /* font-semibold */
+  padding: 0.875rem 1.5rem; /* px-6 py-3.5 */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); /* shadow-md */
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.dark .contact-form-submit {
+  background-color: #6366f1; /* brand-500 (ejemplo) */
+}
+
+.contact-form-submit:hover {
+  background-color: #4338ca; /* brand-700 (ejemplo) */
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1); /* shadow-lg */
+}
+
+.dark .contact-form-submit:hover {
+  background-color: #4f46e5; /* brand-600 (ejemplo) */
+}
+
+.contact-form-submit:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); /* shadow-md */
+}
+
+/* Contact Info Links */
+.contact-info-card ul li a {
+  position: relative;
+  transition: color 0.2s ease-in-out;
+}
+
+.contact-info-card ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #4f46e5; /* brand-600 (ejemplo) */
+  transition: width 0.3s ease-out;
+}
+
+.dark .contact-info-card ul li a::after {
+  background-color: #6366f1; /* brand-500 (ejemplo) */
+}
+
+.contact-info-card ul li a:hover::after {
+  width: 100%;
+}
+
+.contact-info-card ul li svg {
+  transition: transform 0.3s ease-out;
+}
+.contact-info-card ul li:hover svg {
+  transform: scale(1.1);
 }

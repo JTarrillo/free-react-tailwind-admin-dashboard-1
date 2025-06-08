@@ -3,8 +3,8 @@ import PageMeta from "../../../components/common/PageMeta";
 import AboutSection from "../About/AboutPage"; 
 import ServicesSection from "../Services/ServicesPage"; 
 import ContactSection from "../Contact/ContactPage"; 
-import TestimonialsSection from "../Testimons/TestimonialsPage"; // Ruta corregida
-import "./HomePage.css"; // Importar el archivo CSS (asumiendo que está en la misma carpeta 'Home')
+import TestimonialsSection from "../Testimons/TestimonialsPage"; 
+import "./HomePage.css"; 
 
 export default function HomePage() {
   const handleScrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -20,15 +20,15 @@ export default function HomePage() {
       />
 
       {/* Hero Section - Ailife Style */}
-      <section id="home" className="relative py-20 md:py-28 lg:py-32 xl:py-40 hero-section overflow-hidden"> {/* Clases de Tailwind reemplazadas */}
-        {/* Decorative elements (simplified) */}
-        <div className="absolute top-0 left-0 w-64 h-64 hero-decorative-pink"></div> {/* Clases reemplazadas */}
-        <div className="absolute bottom-0 right-0 w-72 h-72 hero-decorative-blue"></div> {/* Clases reemplazadas */}
+      <section id="home" className="relative py-20 md:py-28 lg:py-32 xl:py-40 hero-section overflow-hidden"> 
+        {/* Decorative elements will use existing classes, animation applied via CSS */}
+        <div className="absolute top-0 left-0 w-64 h-64 hero-decorative-pink"></div> 
+        <div className="absolute bottom-0 right-0 w-72 h-72 hero-decorative-blue"></div> 
 
         <div className="container mx-auto px-6 text-center relative z-10">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-800 dark:text-white">
             Get Quality & 10x Faster Way To <br className="hidden md:block" /> Write{" "}
-            <span className="hero-title-gradient"> {/* Clases reemplazadas */}
+            <span className="hero-title-gradient"> 
               Testimonials
             </span>
           </h1>
@@ -54,23 +54,23 @@ export default function HomePage() {
       </section>
 
       {/* Features Section (Why Choose Us) */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-900"> {/* Estos estilos de Tailwind se mantienen por simplicidad */}
+      <section className="features-section"> {/* Aplicando clase CSS para el fondo y padding */}
         <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 dark:text-white">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl font-bold text-gray-800 dark:text-white"> {/* Manteniendo Tailwind para título principal de sección */}
               ¿Por Qué Elegirnos?
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 mt-2">
+            <p className="text-gray-600 dark:text-gray-400 mt-2"> {/* Manteniendo Tailwind para subtítulo */}
               Comprometidos con la excelencia y la innovación.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {/* Feature 1 */}
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg text-center">
-              <div className="text-brand-500 dark:text-brand-400 mb-4">
+            <div className="feature-card"> {/* Aplicando clase CSS */}
+              <div className="feature-icon-container"> {/* Aplicando clase CSS */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-12 w-12 mx-auto"
+                  className="h-12 w-12 mx-auto" /* Tailwind para tamaño y centrado del SVG */
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -83,20 +83,20 @@ export default function HomePage() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">
+              <h3 className="feature-card-title"> {/* Aplicando clase CSS */}
                 Innovación Constante
               </h3>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="feature-card-description"> {/* Aplicando clase CSS */}
                 Nos mantenemos a la vanguardia de la tecnología para ofrecerte lo
                 mejor.
               </p>
             </div>
             {/* Feature 2 */}
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg text-center">
-              <div className="text-brand-500 dark:text-brand-400 mb-4">
+            <div className="feature-card"> {/* Aplicando clase CSS */}
+              <div className="feature-icon-container"> {/* Aplicando clase CSS */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-12 w-12 mx-auto"
+                  className="h-12 w-12 mx-auto" /* Tailwind para tamaño y centrado del SVG */
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -109,19 +109,19 @@ export default function HomePage() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">
+              <h3 className="feature-card-title"> {/* Aplicando clase CSS */}
                 Resultados Garantizados
               </h3>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="feature-card-description"> {/* Aplicando clase CSS */}
                 Soluciones efectivas que cumplen y superan tus expectativas.
               </p>
             </div>
             {/* Feature 3 */}
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg text-center">
-              <div className="text-brand-500 dark:text-brand-400 mb-4">
+            <div className="feature-card"> {/* Aplicando clase CSS */}
+              <div className="feature-icon-container"> {/* Aplicando clase CSS */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-12 w-12 mx-auto"
+                  className="h-12 w-12 mx-auto" /* Tailwind para tamaño y centrado del SVG */
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -134,10 +134,10 @@ export default function HomePage() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">
+              <h3 className="feature-card-title"> {/* Aplicando clase CSS */}
                 Soporte Dedicado
               </h3>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="feature-card-description"> {/* Aplicando clase CSS */}
                 Estamos aquí para ayudarte en cada paso del camino.
               </p>
             </div>
@@ -151,7 +151,7 @@ export default function HomePage() {
       <ContactSection />
 
       {/* Final Call to Action Section (Optional, can be removed if redundant) */}
-      <section className="py-16 final-cta-section"> {/* Clases de Tailwind reemplazadas */}
+      <section className="py-16 final-cta-section"> 
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-6">
             ¿Listo para Empezar Tu Próximo Gran Proyecto?

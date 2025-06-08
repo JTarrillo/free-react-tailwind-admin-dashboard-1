@@ -1,60 +1,24 @@
 import { Link } from "react-router-dom";
-import "./AboutPage.css"; // Importar el archivo CSS
+import "./AboutPage.css"; 
 
-// Placeholder icon components
-const MissionIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    className="h-10 w-10 text-brand-500"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-    strokeWidth={2}
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7.014A7.986 7.986 0 0112 0c2.986 0 5.857 1.579 7.014 3.986S18 8 18 10c2-1 2.657-1.343 2.657-1.343a8 8 0 01-3.001 10z"
-    />
+// Iconos para la línea de tiempo y valores
+const TimelineMissionIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zm-7.518-.267A8.25 8.25 0 1120.25 10.5M8.288 14.212A5.25 5.25 0 1117.25 10.5" />
   </svg>
 );
-const VisionIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    className="h-10 w-10 text-brand-500"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-    strokeWidth={2}
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-    />
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-    />
+const TimelineVisionIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+    <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
   </svg>
 );
-const ValuesIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    className="h-10 w-10 text-brand-500"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-    strokeWidth={2}
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M4.871 4A17.926 17.926 0 003 12c0 2.874.713 5.59 1.97 7.942M9.903 4.058A17.926 17.926 0 0112 3c2.874 0 5.59.713 7.942 1.97M4.058 14.097A17.926 17.926 0 013 12c0-2.874.713-5.59 1.97-7.942m14.038 15.884A17.926 17.926 0 0112 21c-2.874 0-5.59-.713-7.942-1.97M14.097 19.942A17.926 17.926 0 0012 21c-2.874 0-5.59-.713-7.942-1.97M19.942 9.903A17.926 17.926 0 0021 12c0 2.874-.713 5.59-1.97 7.942M9.903 19.942A17.926 17.926 0 0112 21c2.874 0 5.59-.713 7.942-1.97M19.942 14.097A17.926 17.926 0 0121 12c0-2.874-.713-5.59-1.97-7.942M14.097 4.058A17.926 17.926 0 0012 3c-2.874 0-5.59.713-7.942 1.97"
-    />
+const ValueItemIcon = () => (
+ <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
   </svg>
 );
+
 
 export default function AboutSection() {
   const handleScrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -65,91 +29,103 @@ export default function AboutSection() {
     }
   };
 
+  const timelineData = [
+    {
+      id: "mission",
+      title: "Nuestra Misión",
+      text: "Empoderar a individuos y empresas con soluciones tecnológicas innovadoras y personalizadas, fomentando crecimiento y eficiencia en el mundo digital. Calidad, creatividad, integridad y colaboración son nuestra base.",
+      icon: <TimelineMissionIcon />,
+      brandColor: "#3B82F6", // blue-500
+      cardBgLight: "#ffffff",
+      cardBgDark: "#2d3748", // slate-800
+    },
+    {
+      id: "vision",
+      title: "Nuestra Visión",
+      text: "Ser líderes tecnológicos y el socio preferido para transformar ideas en realidades digitales exitosas. Visualizamos un futuro con tecnología accesible que impulse la innovación y el progreso sostenible global.",
+      icon: <TimelineVisionIcon />,
+      brandColor: "#10B981", // green-500
+      cardBgLight: "#ffffff",
+      cardBgDark: "#2d3748",
+    },
+  ];
+
+  const valuesData = [
+    { title: "Innovación", text: "Buscamos constantemente nuevas y mejores formas de hacer las cosas.", brandColorRGB: "99, 102, 241" },
+    { title: "Calidad", text: "Nos esforzamos por la excelencia en todo lo que creamos y ofrecemos.", brandColorRGB: "22, 163, 74" },
+    { title: "Colaboración", text: "Creemos en el poder del trabajo en equipo y las alianzas estratégicas.", brandColorRGB: "219, 39, 119" },
+    { title: "Integridad", text: "Actuamos con honestidad y transparencia en todas nuestras interacciones.", brandColorRGB: "245, 158, 11" },
+    { title: "Orientación al Cliente", text: "Ponemos las necesidades de nuestros clientes en el centro de nuestras decisiones.", brandColorRGB: "59, 130, 246" },
+    { title: "Pasión", text: "Amamos lo que hacemos y nos dedicamos a superar las expectativas.", brandColorRGB: "139, 92, 246" },
+  ];
+
   return (
-    <section id="about" className="about-section-container"> {/* Aplicando clase CSS y manteniendo Tailwind si es necesario */}
+    <section id="about" className="about-section-container">
       <div className="container mx-auto px-4">
-        {/* Header Section */}
         <div className="text-center mb-12 md:mb-16">
-          <h1 className="about-header-title"> {/* Aplicando clase CSS */}
-            Conoce Nuestra Esencia
+          <h1 className="about-header-title"> 
+            Nuestra Trayectoria
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Somos un equipo apasionado dedicado a crear soluciones digitales
-            impactantes. Creemos en el poder de la tecnología para transformar
-            ideas en realidades.
+            Un vistazo a nuestra historia, valores y la visión que nos impulsa hacia el futuro.
           </p>
         </div>
 
-        {/* Main Content Area */}
-        <div className="about-content-card"> {/* Aplicando clase CSS */}
-          <div className="mb-10">
-            <h3 className="about-subsection-title flex items-center"> {/* Aplicando clase CSS y manteniendo Tailwind para flex */}
-              <MissionIcon />
-              <span className="ml-3">Nuestra Misión</span>
-            </h3>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
-              Nuestra misión es empoderar a individuos y empresas a través de
-              soluciones tecnológicas innovadoras y personalizadas, fomentando el
-              crecimiento y la eficiencia en un mundo digital en constante
-              evolución. Nos comprometemos a ofrecer productos y servicios de la
-              más alta calidad, construidos sobre una base de creatividad,
-              integridad y colaboración.
-            </p>
-          </div>
-
-          <div className="mb-10">
-            <h3 className="about-subsection-title flex items-center"> {/* Aplicando clase CSS y manteniendo Tailwind para flex */}
-              <VisionIcon /> <span className="ml-3">Nuestra Visión</span>
-            </h3>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
-              Aspiramos a ser líderes reconocidos en el sector tecnológico, siendo
-              el socio preferido para aquellos que buscan transformar sus ideas en
-              realidades digitales exitosas. Visualizamos un futuro donde la
-              tecnología sea accesible y sirva como catalizador para la innovación
-              y el progreso sostenible a nivel global.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="about-subsection-title flex items-center"> {/* Aplicando clase CSS y manteniendo Tailwind para flex */}
-              <ValuesIcon /> <span className="ml-3">Nuestros Valores</span>
-            </h3>
-            <ul className="grid md:grid-cols-2 gap-6 text-lg">
-              {(
-                [
-                  "Innovación: Buscamos constantemente nuevas y mejores formas de hacer las cosas.",
-                  "Calidad: Nos esforzamos por la excelencia en todo lo que creamos y ofrecemos.",
-                  "Colaboración: Creemos en el poder del trabajo en equipo y las alianzas estratégicas.",
-                  "Integridad: Actuamos con honestidad y transparencia en todas nuestras interacciones.",
-                  "Orientación al Cliente: Ponemos las necesidades de nuestros clientes en el centro de nuestras decisiones.",
-                  "Pasión: Amamos lo que hacemos y nos dedicamos a superar las expectativas.",
-                ] as const
-              ).map((value, index) => (
-                <li key={index} className="flex items-start">
-                  <svg
-                    className="w-5 h-5 text-brand-500 mr-2 mt-1 flex-shrink-0" // Tailwind para el icono
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
+        <div className="about-main-card">
+          {/* Timeline Section */}
+          <div className="timeline-container">
+            {timelineData.map((item, index) => (
+              <div key={item.id} className="timeline-item">
+                <div className="timeline-item-icon-wrapper" style={{ backgroundColor: item.brandColor }}>
+                  {item.icon}
+                </div>
+                <div className="timeline-item-content-wrapper">
+                  <div 
+                    className="timeline-item-content" 
+                    style={{ '--timeline-card-bg': `var(--timeline-card-bg-${item.id})` } as React.CSSProperties}
                   >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                  <span className="text-gray-700 dark:text-gray-300"> {/* Tailwind para el texto del valor */}
-                    {value}
-                  </span>
-                </li>
+                    {/* Definir variables CSS para fondos específicos de tarjeta si es necesario, o usar clases */}
+                    <style>
+                      {`
+                        :root {
+                          --timeline-card-bg-${item.id}: ${item.cardBgLight};
+                        }
+                        .dark {
+                          --timeline-card-bg-${item.id}: ${item.cardBgDark};
+                        }
+                      `}
+                    </style>
+                    <h3 className="timeline-item-title" style={{ color: item.brandColor }}>{item.title}</h3>
+                    <p className="timeline-item-text">{item.text}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Valores Section */}
+          <div className="about-values-section-wrapper">
+            <div className="about-values-title-section">
+                <h3 className="about-values-title">Principios Fundamentales</h3>
+            </div>
+            <div className="about-values-grid">
+              {valuesData.map((value, index) => (
+                <div key={index} className="about-value-card" style={{ '--brand-color-rgb': value.brandColorRGB } as React.CSSProperties}>
+                  <div className="about-value-card-icon" style={{ color: `rgb(${value.brandColorRGB})`, backgroundColor: `rgba(${value.brandColorRGB}, 0.1)`}}>
+                    <ValueItemIcon />
+                  </div>
+                  <h4 className="about-value-card-title">{value.title}</h4>
+                  <p className="about-value-card-text">{value.text}</p>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
 
         {/* Call to Action */}
         <div className="mt-12 md:mt-16 text-center">
           <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
-            ¿Listo para colaborar con nosotros?
+            ¿Listo para construir el futuro juntos?
           </h3>
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-6 max-w-xl mx-auto">
             Nos encantaría conocer tu proyecto y explorar cómo podemos ayudarte a
@@ -158,7 +134,7 @@ export default function AboutSection() {
           <a
             href="#contact"
             onClick={handleScrollToContact}
-            className="bg-brand-500 hover:bg-brand-600 text-white font-semibold px-8 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 dark:bg-brand-600 dark:hover:bg-brand-700" // Tailwind para el botón
+            className="bg-brand-500 hover:bg-brand-600 text-white font-semibold px-8 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 dark:bg-brand-600 dark:hover:bg-brand-700" 
           >
             Hablemos
           </a>

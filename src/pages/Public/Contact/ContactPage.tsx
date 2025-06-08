@@ -93,7 +93,7 @@ export default function ContactSection() {
                   type="text"
                   id="name"
                   name="name"
-                  className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors"
+                  className="contact-form-input" // Aplicando clase CSS
                   placeholder="Tu Nombre"
                 />
               </div>
@@ -108,7 +108,7 @@ export default function ContactSection() {
                   type="email"
                   id="email"
                   name="email"
-                  className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors"
+                  className="contact-form-input" // Aplicando clase CSS
                   placeholder="tu@email.com"
                 />
               </div>
@@ -123,7 +123,7 @@ export default function ContactSection() {
                   type="text"
                   id="subject"
                   name="subject"
-                  className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors"
+                  className="contact-form-input" // Aplicando clase CSS
                   placeholder="Asunto de tu mensaje"
                 />
               </div>
@@ -138,13 +138,13 @@ export default function ContactSection() {
                   id="message"
                   name="message"
                   rows={5}
-                  className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors"
+                  className="contact-form-input" // Aplicando clase CSS
                   placeholder="Escribe tu mensaje aquí..."
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="w-full bg-brand-500 hover:bg-brand-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 dark:bg-brand-600 dark:hover:bg-brand-700"
+                className="contact-form-submit" // Aplicando clase CSS
               >
                 Enviar Mensaje
               </button>
@@ -165,7 +165,7 @@ export default function ContactSection() {
                 <MailIcon />
                 <a
                   href="mailto:info@example.com"
-                  className="hover:text-brand-600 dark:hover:text-brand-400"
+                  className="hover:text-brand-600 dark:hover:text-brand-400" // Tailwind para color hover base, CSS para subrayado
                 >
                   info@example.com
                 </a>
@@ -174,7 +174,7 @@ export default function ContactSection() {
                 <PhoneIcon />
                 <a
                   href="tel:+1234567890"
-                  className="hover:text-brand-600 dark:hover:text-brand-400"
+                  className="hover:text-brand-600 dark:hover:text-brand-400" // Tailwind para color hover base, CSS para subrayado
                 >
                   +1 (234) 567-890
                 </a>

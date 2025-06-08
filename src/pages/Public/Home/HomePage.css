@@ -12,8 +12,18 @@
 .dark .hero-section {
   --tw-gradient-from: #1f2937; /* dark:from-gray-800 */
   --tw-gradient-to: #0f172a; /* dark:to-slate-900 */
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-   /* dark:via-gray-800 es el mismo que from, así que no se necesita un via explícito si es el mismo color */
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-from), var(--tw-gradient-to); /* Ajustado para via-gray-800 */
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.03);
+  }
 }
 
 .hero-decorative-pink {
@@ -22,7 +32,8 @@
   border-radius: 9999px;
   filter: blur(48px); /* blur-3xl */
   opacity: 0.5;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); /* Mantener transform original para posicionamiento */
+  animation: pulse-subtle 6s infinite ease-in-out;
 }
 
 .dark .hero-decorative-pink {
@@ -35,7 +46,8 @@
   border-radius: 9999px;
   filter: blur(48px); /* blur-3xl */
   opacity: 0.5;
-  transform: translate(50%, 50%);
+  transform: translate(50%, 50%); /* Mantener transform original para posicionamiento */
+  animation: pulse-subtle 6s infinite ease-in-out 1s; /* Añadido pequeño delay */
 }
 
 .dark .hero-decorative-blue {
@@ -56,6 +68,83 @@
 .dark .hero-title-gradient {
   --tw-gradient-from: #60a5fa; /* dark:from-blue-400 */
   --tw-gradient-to: #a855f7; /* dark:to-purple-500 */
+}
+
+/* Styles for Features Section */
+.features-section {
+  /* Corresponds to py-16 bg-gray-50 dark:bg-gray-900 */
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-color: #f9fafb; /* bg-gray-50 */
+}
+.dark .features-section {
+  background-color: #111827; /* dark:bg-gray-900 */
+}
+
+.feature-card {
+  /* Replaces: bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg text-center */
+  background-color: #ffffff;
+  padding: 2rem; /* p-8 */
+  border-radius: 0.75rem; /* rounded-xl */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+  text-align: center;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  border: 1px solid transparent; /* Borde inicial transparente */
+}
+
+.dark .feature-card {
+  background-color: #1f2937; /* dark:bg-gray-800 */
+  border-color: #374151; /* dark:border-gray-700 (opcional, para un look más definido en dark) */
+}
+
+.feature-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* shadow-xl */
+  /* Opcional: borde de color en hover */
+  /* border-color: #6366f1; /* brand-500 (ejemplo) */
+}
+
+/* .dark .feature-card:hover {
+  border-color: #818cf8; /* brand-400 (ejemplo) */
+/* } */
+
+.feature-icon-container {
+  /* Replaces: text-brand-500 dark:text-brand-400 mb-4 */
+  color: #6366f1; /* text-brand-500 (ejemplo, ajusta a tu color de marca) */
+  margin-bottom: 1rem; /* mb-4 */
+  transition: transform 0.3s ease-out;
+}
+
+.dark .feature-icon-container {
+  color: #818cf8; /* dark:text-brand-400 (ejemplo) */
+}
+
+.feature-card:hover .feature-icon-container svg {
+   transform: scale(1.1) rotate(5deg);
+}
+
+
+.feature-card-title {
+  /* Replaces: text-xl font-semibold text-gray-800 dark:text-white mb-2 */
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 600; /* font-semibold */
+  color: #1f2937; /* text-gray-800 */
+  margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.dark .feature-card-title {
+  color: #ffffff; /* dark:text-white */
+}
+
+.feature-card-description {
+  /* Replaces: text-gray-600 dark:text-gray-400 */
+  color: #4b5563; /* text-gray-600 */
+  font-size: 0.95rem; /* Ligeramente más pequeño para un look moderno */
+  line-height: 1.6;
+}
+
+.dark .feature-card-description {
+  color: #9ca3af; /* dark:text-gray-400 */
 }
 
 .final-cta-section {

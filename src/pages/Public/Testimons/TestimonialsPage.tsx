@@ -1,3 +1,6 @@
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 import "./TestimonialsPage.css"; // Importar el archivo CSS
 
 // Placeholder icon for quotes, you can replace with a more specific one
@@ -32,11 +35,39 @@ const testimonialsData = [
 ];
 
 export default function TestimonialsSection() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    pauseOnHover: true,
+    arrows: false, // Opcional: puedes habilitarlas y estilizarlas
+    responsive: [
+      {
+        breakpoint: 1024, // lg
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 768, // md
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      }
+    ]
+  };
+
   return (
-    <section id="testimonials" className="testimonials-section-container"> {/* Aplicando clase CSS */}
+    <section id="testimonials" className="testimonials-section-container">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="testimonials-header-title"> {/* Aplicando clase CSS */}
+          <h2 className="testimonials-header-title"> 
             Lo Que Dicen Nuestros Clientes
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
@@ -44,31 +75,34 @@ export default function TestimonialsSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonialsData.map((testimonial) => (
-            <div
-              key={testimonial.id}
-              className="testimonial-card flex flex-col items-center text-center" // Aplicando clase CSS y manteniendo Tailwind para flex/layout
-            >
-              <QuoteIcon />
-              <p className="testimonial-quote-text flex-grow"> {/* Aplicando clase CSS y manteniendo Tailwind para flex-grow */}
-                "{testimonial.quote}"
-              </p>
-              <div className="mt-auto">
-                <img 
-                  src={testimonial.avatar} 
-                  alt={testimonial.author} 
-                  className="w-16 h-16 rounded-full mx-auto mb-3 border-2 border-brand-500 dark:border-brand-400" // Tailwind para avatar
-                />
-                <h4 className="testimonial-author-name"> {/* Aplicando clase CSS */}
-                  {testimonial.author}
-                </h4>
-                <p className="text-sm text-gray-500 dark:text-gray-400"> {/* Tailwind para título del autor */}
-                  {testimonial.title}
-                </p>
+        <div className="testimonial-slider-wrapper"> {/* Nuevo wrapper para el slider */}
+          <Slider {...settings}>
+            {testimonialsData.map((testimonial) => (
+              <div key={testimonial.id} className="testimonial-slide-item-outer"> {/* Wrapper para padding del slide */}
+                <div
+                  className="testimonial-card flex flex-col items-center text-center h-full" // Asegurar altura completa para consistencia
+                >
+                  <QuoteIcon />
+                  <p className="testimonial-quote-text flex-grow"> 
+                    "{testimonial.quote}"
+                  </p>
+                  <div className="mt-auto">
+                    <img 
+                      src={testimonial.avatar} 
+                      alt={testimonial.author} 
+                      className="w-16 h-16 rounded-full mx-auto mb-3 border-2 border-brand-500 dark:border-brand-400"
+                    />
+                    <h4 className="testimonial-author-name"> 
+                      {testimonial.author}
+                    </h4>
+                    <p className="text-sm text-gray-500 dark:text-gray-400"> 
+                      {testimonial.title}
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </Slider>
         </div>
       </div>
     </section>
