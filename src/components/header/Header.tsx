@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ThemeToggleButton } from "../common/ThemeToggleButton";
 import NotificationDropdown from "./NotificationDropdown";
 import UserDropdown from "./UserDropdown";
-import { Link } from "react-router";
+import { Link } from "react-router-dom"; // CORREGIDO de "react-router" a "react-router-dom"
 
 // Define the interface for the props
 interface HeaderProps {
@@ -78,7 +78,7 @@ const Header: React.FC<HeaderProps> = ({ onClick, onToggle }) => {
             </svg>
           </button>
 
-          <Link to="/" className="lg:hidden">
+          <Link to="/admin/dashboard" className="lg:hidden"> {/* MODIFICADO para apuntar a /admin/dashboard */}
             <img
               className="dark:hidden"
               src="./images/logo/logo.svg"
